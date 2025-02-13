@@ -1,0 +1,26 @@
+<div class="upload-container">
+    <h2>Importer un fichier Excel</h2>
+  
+    <!-- Champ d'upload -->
+    <input type="file" (change)="onFileChange($event)" accept=".xls,.xlsx">
+  
+    <!-- Affichage des données importées -->
+    <table *ngIf="importedData.length > 0" class="data-table">
+      <thead>
+        <tr>
+          <th *ngFor="let key of displayedColumns">{{ key }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of importedData">
+          <td *ngFor="let key of displayedColumns">{{ row[key] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Bouton d'envoi des données -->
+    <button (click)="uploadData()" [disabled]="importedData.length === 0">
+      Envoyer les données
+    </button>
+  </div>
+  
