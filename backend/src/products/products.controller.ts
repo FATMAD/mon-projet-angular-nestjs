@@ -14,14 +14,14 @@ export class ProductsController {
   getKrakenData() {
     return { message: 'API Kraken fonctionne !' }; // ✅ Répondra à GET /kraken
   }
-  /*@Post()
+  @Post()
   async importProducts(@Body() products: Product[]) {
     return this.productService.createProducts(products);
-  }*/
+  }
 
-  @Post()
+ /* @Post()
   postKrakenData(@Body() data: any) {
     console.log('Données reçues :', data);
     return { message: 'Données reçues avec succès', data };
-  }
+  }*/
 }
